@@ -2,11 +2,12 @@
 <body>
     <header>
     <h1><%= nombre %></h1>
+    <img src="icons/logotravel.png" alt="">
     </header>
     <%- include("templates/menu") %>    
     <main>
-    <p><%= descripcion %></p>
-    <p><%= precio %></p>
+    <p class="descri"><%= descripcion %></p>
+    <p class="precio"><%= precio %></p>
 
     <img src="<%= img %>" alt="<%= descripcion %>">
     </main>
