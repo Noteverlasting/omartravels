@@ -19,6 +19,7 @@ ul{
   list-style: none;
   background-color: #c28cc1;
   padding: 15px;
+  border-top: 1px solid #ccc
 }
 
 li a {
@@ -46,11 +47,12 @@ font-size: 3rem;
 
   text-align: center;
   padding: .5rem 0 1rem 0 ;
-  color: darkorchid;
+  color: white;
+  background-color: #c28cc1;
 }
 
 p{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 img {
