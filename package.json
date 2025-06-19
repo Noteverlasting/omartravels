@@ -1,0 +1,29 @@
+{
+  "name": "omar_travels",
+  "version": "1.0.0",
+  "description": "aplicacion Agencia de viajes",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noteverlasting/omartravels.git"
+  },
+  "keywords": [
+    "Node",
+    "express"
+  ],
+  "author": "Omar Fernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Noteverlasting/omartravels/issues"
+  },
+  "homepage": "https://github.com/Noteverlasting/omartravels#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}

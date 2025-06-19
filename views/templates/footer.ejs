@@ -1,0 +1,10 @@
+<footer>
+  <p>© <%= new Date().getFullYear() %> Estamos probando</p>
+  <p>
+    <% datos.forEach(item => { %>
+           <a href="/<%= item.ruta %>"> <%= item.lugar %></a> |
+        <% }) %>
+
+    <a href="/nada">nada</a>
+  </p>
+</footer>

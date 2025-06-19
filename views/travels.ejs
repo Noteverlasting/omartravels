@@ -1,0 +1,15 @@
+<%- include("templates/head") %>
+<body>
+    <header>
+    <h1><%= nombre %></h1>
+    </header>
+    <%- include("templates/menu") %>    
+    <main>
+    <p><%= descripcion %></p>
+    <p><%= precio %></p>
+
+    <img src="<%= img %>" alt="<%= descripcion %>">
+    </main>
+    <%- include ("templates/footer") %>  
+</body>
+</html>
