@@ -64,6 +64,10 @@ img {
   width: 100%;
 }
 
+.cuatrocero {
+    object-fit: none;
+}  
+
 footer {
   background-color: #c28cc1;
   padding: 15px;

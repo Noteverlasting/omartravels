@@ -46,5 +46,13 @@
     "descripcion": "16 días de viaje, con hoteles de lujo y vuelos incluidos",
     "precio": 989.78,
     "img": "https://images.unsplash.com/photo-1557750255-c76072a7aad1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "ruta": "/lodo",
+    "lugar": "la charca",
+    "nombre": "La charca de Peppa Pig",
+    "descripcion": "Ven con Peppa a revolcarte como una serda",
+    "precio": 9999.99,
+    "img": "https://www.cartonionline.com/wordpress/wp-content/uploads/2022/01/1642606826_maxresdefault.jpg"
   }
 ]

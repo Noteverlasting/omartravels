@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>travels admin</title>
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body>
+    <header>
+      <h1>administración de express travels</h1>
+    </header>
+    <main>
+      <section id="insert">
+        <form action="/insert" method="POST">
+            <div>
+                <label for="ruta">Ruta (URL)</label>
+                <input type="text" id="ruta" name="ruta">
+            </div>
+                        <div>
+                <label for="lugar">Lugar</label>
+                <input type="text" id="lugar" name="lugar">
+            </div>
+                        <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre">
+            </div>
+                        <div>
+                <label for="descripcion">Descripcion</label>
+                <input type="text" id="descripcion" name="descripcion">
+            </div>
+            <div>
+                <label for="precio">Precio</label>
+                <input type="text" id="precio" name="precio">
+            </div>
+                        <div>
+                <label for="img">Ruta de la imagen</label>
+                <input type="text" id="img" name="img">
+            </div>
+            <div id="buttons">
+                <button type="submit">Aceptar</button>
+                <button type="reset">Borrar</button>
+
+            </div>
+        </form>
+      </section>
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>Ruta</th>
+              <th>Lugar</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>edit.</th>
+              <th>elim.</th>
+            </tr>
+          </thead>
+          <% jsonDatos.forEach(item => { %>
+          <tr>
+            <td><%= item.ruta %></td>
+            <td><%= item.lugar %></td>
+            <td><%= item.nombre %></td>
+            <td><%= item.precio %></td>
+            <td><img src="icons/pencil.png"></td>
+            <td><img src="icons/delete.png"></td>
+          </tr>
+          <% }) %>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
