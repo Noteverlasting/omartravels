@@ -52,8 +52,20 @@ section table tr {
 
 section form {
     padding: .3rem;
-    border: 1px solid gray;
+    border: 3px solid #698aa4;
     border-radius: .5rem;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),  url(../icons/logotravel.png);
+}
+
+.formupdate form {
+    background-image: linear-gradient(rgba(117, 194, 249, 0.5), rgba(117, 194, 249, 0.5)),  url(../icons/logotravel.png);
+}
+
+legend{
+    font-size: 1.7rem;
+      letter-spacing: -0.06em;
+      font-weight: 700;
+    color: rgb(8, 68, 67);
 }
 
 form div {

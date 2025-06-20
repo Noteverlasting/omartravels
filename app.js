@@ -47,8 +47,9 @@ app.post('/insert', (req, res) => {
     console.log(req.body)
     // La guardamos en una variable
     const newTravel = req.body
-    // Indicamos que la key ruta ya contenga "/" para no tener que escribirla en el formu
-    newTravel.ruta = "/" + newTravel.ruta
+    newTravel.id = crypto.randomUUID()
+    // Indicamos que la key ruta, si NO contiene la "/" se añada automaticamente para no tener que escribirla en el formu
+    if (newTravel.ruta[0] != "/") newTravel.ruta = "/" + newTravel.ruta
     // Indicamos tambien que convierta los numeros de string a numero con decimales
     newTravel.precio = parseFloat(newTravel.precio)
     // Agregamos con push el nuevo viaje a nuestro array json
@@ -59,9 +60,35 @@ app.post('/insert', (req, res) => {
     res.redirect("/admin")
 })
 
+app.delete('/delete/:id', (req, res)=>{
+    // Guardamos la id del elemento a borrar
+    const paramID = req.params.id;
+    // Aplicamos filter, que iterará sobre el array y devolverá un nuevo array con los elementos que cumplan la condición
+    const newDato = jsonDatos.filter(travel => travel.id != paramID)
+    // Guardamos los cambios realizados con filter en el archivo json
+    fs.writeFileSync(path.join(__dirname, "data", "travelscopy.json"), JSON.stringify(newDato, null, 2), "utf-8")
+    res.redirect("/admin")
+})
 
+app.put('/update/:id', (req, res)=>{
+    console.log(req.body)
 
+    const Uid = req.params.id
+    const Utravel = req.body
+    const UDato = jsonDatos.filter(travel => travel.id != Uid)
 
+    // Indicamos que la key ruta, si NO contiene la "/" se añada automaticamente para no tener que escribirla en el formu
+    if (Utravel.ruta[0] != "/") Utravel.ruta = "/" + Utravel.ruta
+    // Indicamos tambien que convierta los numeros de string a numero con decimales
+    Utravel.precio = parseFloat(Utravel.precio)
+    // Agregamos con push el nuevo viaje a nuestro array json
+    UDato.push(Utravel)
+
+    // Guardamos los cambios en el archivo json y redirigimos a la ruta admin
+    fs.writeFileSync(path.join(__dirname, "data", "travelscopy.json"), JSON.stringify(UDato, null, 2), "utf-8")
+    res.redirect("/admin")
+
+})
 
 app.use((req, res) => {
   res.status(404).render("404", {lugar: "404", nombre: "404 página no encontrada", datos:jsonDatos});

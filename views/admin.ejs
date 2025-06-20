@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>travels admin</title>
     <link rel="stylesheet" href="css/admin.css" />
+    <script src="js/admin.js" defer></script>
   </head>
   <body>
     <header>
@@ -13,6 +14,7 @@
     <main>
       <section id="insert">
         <form action="/insert" method="POST">
+          <legend>🌍 Añade un nuevo destino 🌍</legend>
             <div>
                 <label for="ruta">Ruta (URL)</label>
                 <input type="text" id="ruta" name="ruta">
@@ -44,6 +46,41 @@
             </div>
         </form>
       </section>
+            <section id="update" class="formupdate">
+        <form name="update">
+          <legend>✏️ Modificación de datos ✏️</legend>
+            <input type="hidden" id="idUpdate" name="idUpdate">
+            <div>
+                <label for="rutaUpdate">Ruta (URL)</label>
+                <input type="text" id="rutaUpdate" name="rutaUpdate">
+            </div>
+                        <div>
+                <label for="lugarUpdate">Lugar</label>
+                <input type="text" id="lugarUpdate" name="lugarUpdate">
+            </div>
+                        <div>
+                <label for="nombreUpdate">Nombre</label>
+                <input type="text" id="nombreUpdate" name="nombreUpdate">
+            </div>
+                        <div>
+                <label for="descripcionUpdate">Descripcion</label>
+                <input type="text" id="descripcionUpdate" name="descripcionUpdate">
+            </div>
+            <div>
+                <label for="precioUpdate">Precio</label>
+                <input type="text" id="precioUpdate" name="precioUpdate">
+            </div>
+                        <div>
+                <label for="imgUpdate">Ruta de la imagen</label>
+                <input type="text" id="imgUpdate" name="imgUpdate">
+            </div>
+            <div id="buttons">
+                <button type="submit">Aceptar</button>
+                <button type="reset">Borrar</button>
+
+            </div>
+        </form>
+      </section>
       <section>
         <table>
           <thead>
@@ -62,12 +99,14 @@
             <td><%= item.lugar %></td>
             <td><%= item.nombre %></td>
             <td><%= item.precio %></td>
-            <td><img src="icons/pencil.png"></td>
-            <td><img src="icons/delete.png"></td>
+            <td><button onclick="editarDestino('<%= JSON.stringify(item) %>')"><img src="icons/pencil.png"></button></td>
+            <td><button onclick="borrarDestino('<%= item.id %>')"><img src="icons/delete.png"></button></td>
           </tr>
           <% }) %>
         </table>
       </section>
     </main>
+  
   </body>
+
 </html>

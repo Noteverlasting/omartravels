@@ -50,10 +50,8 @@ main {
 }
 
 header {
-    position: relative;
-
-    min-height: 8rem;
-
+  position: relative;
+  min-height: 8rem;
   background: linear-gradient(to right, #c3a1c2, #c28cc1);    
 }
 
@@ -62,8 +60,9 @@ header img {
     right: 2vw;
     top: 0;
     width: 10%;
+    height: 10rem;
     object-fit: contain;
-        z-index: 1;
+    z-index: 1;
 }
 
 h1 {
@@ -76,17 +75,17 @@ h1 {
   /* background-color: #c28cc1; */
   margin-bottom: -2rem;
   margin-top: -2rem;
-  animation: fadeIn .5s ease-in-out;
+  animation: fadeIn .8s ease-in-out;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 
-.descri p {
-  font-size: 1.2rem;
+.descri {
+  font-size: 1.5rem;
 }
 
 .precio  {
@@ -95,7 +94,7 @@ color: #a247a0;
 
 }
 
-img {
+main img {
   display: block;
   margin: 0 auto;
   padding: 1rem 0;
